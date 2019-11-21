@@ -61,6 +61,7 @@ while (listNode!=null)
 //看牛客的题解，递归实现
 //像深度优先搜索算法
 import java.util.*;
+/*
 public class Solution {
     ArrayList<Integer> list = new ArrayList();
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -68,6 +69,26 @@ public class Solution {
             printListFromTailToHead(listNode.next);
             list.add(listNode.val);
         }
+        return list;
+    }
+}
+*/
+//版本四：先进后出，借助栈
+
+import java.util.*;
+public class Solution {
+    ArrayList<Integer> list = new ArrayList();
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        if(listNode==null) return list;
+        Stack stack=new Stack();
+        while (listNode!=null)
+        {
+            stack.push(listNode.val);
+            listNode=listNode.next;
+        }
+        while(!stack.isEmpty())
+            list.add((int)stack.pop());
+
         return list;
     }
 }
