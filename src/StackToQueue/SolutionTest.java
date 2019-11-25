@@ -1,19 +1,28 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+package StackToQueue;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-@RunWith(Arquillian.class)
 public class SolutionTest {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(StackToQueue.Solution.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+    Solution solution=new Solution();
+
+    @Test
+    public void push() {
+        solution.push(1);
+        solution.push(2);
+        solution.push(3);
+        solution.pop();
+        solution.pop();
+        solution.push(4);
+        solution.pop();
+        solution.push(5);
+        solution.pop();
+        solution.pop();
     }
 
+    @Test
+    public void pop() {
+    }
 }
