@@ -16,6 +16,7 @@ package jumpFloor;
 public class Solution {
 
     public int JumpFloor(int target) {
+        if(target<=2) return target;
         int method[]=new int[target+1];
 method[1]=1;
 method[2]=2;
