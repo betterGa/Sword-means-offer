@@ -12,6 +12,8 @@ class ListNode {
         this.val = val;
     }
 }
+
+
 //1.思路：新建一个链表，每次比较list1与list2的元素，把小的链上
 public class Solution {
     public ListNode Merge(ListNode list1,ListNode list2) {
