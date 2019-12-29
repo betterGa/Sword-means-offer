@@ -25,9 +25,9 @@ class TreeNode {
 public class Solution {
 
     public boolean HasSubtree(TreeNode root1,TreeNode root2) {
-if(root1==null||root2==null) return false;
-if(isSame(root1,root2)) return true;
-return HasSubtree(root1.left,root2)||HasSubtree(root1.right,root2);
+        if(root1==null||root2==null) return false;
+        if(isSame(root1,root2)) return true;
+        return HasSubtree(root1.left,root2)||HasSubtree(root1.right,root2);
     }
 
     //再来个方法判断两个二叉树是否相同
@@ -56,14 +56,15 @@ return HasSubtree(root1.left,root2)||HasSubtree(root1.right,root2);
         //但是如果是root1==null,说明root1已经到叶子节点了，而root2不为null，那root1就不可能包含root2了。
         if(root1==null) return false;
         //人家这个写的多好
-      //如果两棵树的当前节点的值相等了，才去递归调用(左，左)&&（右，右）
-      //如果两棵树的当前节点值不相等，直接返回false即可。
+        //如果两棵树的当前节点的值相等了，才去递归调用(左，左)&&（右，右）
+        //如果两棵树的当前节点值不相等，直接返回false即可。
         if(root1.val==root2.val)
         {return isSame(root1.left,root2.left)&&isSame(root1.right,root2.right);}
-else return false;
+        else return false;
     }
 
 }
+
 
 
 
