@@ -47,4 +47,20 @@ while (tag!=popA.length&&!stack.isEmpty())
 }
 
 /**
+ *优化：
+ * 当popA数组元素还没有遍历完，也就是tag!=popA.length时，
+ * 取栈顶元素以后，与popA元素比较，如果值相等，执行的是pop和tag++
+ * 其实和上面执行的步骤是一致的。
+ * 参考大牛代码：
+ *链接：https://www.nowcoder.com/questionTerminal/d77d11405cc7470d82554cb392585106?f=discussion
+ * 来源：牛客网
+ *
+ *  for (int i = 0; i < pushA.length; i++) {
+ *             stack.push(pushA[i]);
+ *             while (!stack.isEmpty() && stack.peek() == popA[index]) {
+ *                 stack.pop();
+ *                 index++;
+ *             }
+ *         }
+*希望二刷时候掌握它。
  */
