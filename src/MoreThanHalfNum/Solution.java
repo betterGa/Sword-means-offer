@@ -47,30 +47,36 @@ import java.util.Arrays;
 
     //这个count真是巧的很。
 
-    /*
+
 
 public class Solution {
     public int MoreThanHalfNum_Solution(int [] array) {
-        //sentry暂存当前哨兵
+        //sentry暂存当前哨兵，初始化值为array[0]
 int sentry=array[0];
 int count=1;
 int i=0;
 while (i+1<array.length)
-{ if(count==0) {sentry=array[i];count=1;i++;}
-
+{ //当这轮的count=0时，应该把隔了一个的新元素置为新的哨兵，所以先i++。
+    if(count==0) {i++;sentry=array[i];count=1;}
+    //如果哨兵和当前遍历判断的（i+1）元素值相等，需要继续向后遍历，i++。
     if(i+1<array.length&&sentry==array[i+1])
     {
         count++;
         i++;
     }
     else {
+        //这时最后一个元素已经判断过了。
         if(i+1>=array.length)
         {
             break;
         }
+        //如果哨兵与当前遍历判断的(i+1)元素值不相等，count-1,然后i++，
+        //这里i++才能使程序正常向后遍历呀。
+        // 因为如果count=0的话，还会i++一次，使不相等的配成一对，
+
         else
-        count--;
-    i++;}
+        {count--;
+    i++;}}
 }
 
 if(count>0)
@@ -84,7 +90,7 @@ if(verify>array.length/2) return sentry;
 
 else return 0;
     }
-}*/
+}
 //已通过，运行时间：24ms
 //占用内存：9336k
 
@@ -92,7 +98,7 @@ else return 0;
 //第二种解法：利用sort排序，由【数字出现的次数超过数组长度的一半】可知
 //如果该数组中存在这样的数字，那么它一定会在排序后的数组的最中间的位置，
 //检查那个位置数字出现的次数即可
-public class Solution {
+/*public class Solution {
     public int MoreThanHalfNum_Solution(int [] array) {
 
         Arrays.sort(array);
@@ -107,6 +113,7 @@ public class Solution {
         else return 0;
     }
 }
+*/
 
 //已通过，运行时间：22ms
 //占用内存：9468k
