@@ -1,19 +1,22 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+package Permutation;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-@RunWith(Arquillian.class)
 public class SolutionTest {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(Permutation.Solution.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+Solution solution=new Solution();
+    @Test
+    public void permutation() {
     }
 
+    @Test
+    public void putInto() {
+        ArrayList<String> resultlist=new ArrayList<>();
+        solution.putInto(new char[]{'a','b','c'},0,3,new int[]{0,0,0},new char[3],resultlist);
+  System.out.println(resultlist);
+    }
 }
