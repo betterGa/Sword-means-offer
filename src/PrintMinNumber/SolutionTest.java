@@ -1,19 +1,19 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+package PrintMinNumber;
+
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-@RunWith(Arquillian.class)
 public class SolutionTest {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(PrintMinNumber.Solution.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+  Solution solution=new Solution();
+    @Test
+    public void printMinNumber() {
+        System.out.println(solution.PrintMinNumber(new int[]{3334,3,3333332}));
     }
 
+    @Test
+    public void putInto() {
+    }
 }
