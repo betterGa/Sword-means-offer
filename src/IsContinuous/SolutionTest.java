@@ -1,19 +1,20 @@
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+package IsContinuous;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-@RunWith(Arquillian.class)
+
 public class SolutionTest {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(IsContinuous.Solution.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+    Solution solution=new Solution();
+    @Test
+    public void isContinuous() {
+        System.out.println(solution.isContinuous(new int[]{1,3,2,5,4}));
+
     }
 
+    @Test
+    public void interval() {
+    }
 }
