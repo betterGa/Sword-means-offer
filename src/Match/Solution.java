@@ -47,7 +47,7 @@ public class Solution {
     //代码如下：
     //思路：递归求解
 
-  
+
         //思路：递归求解
         public boolean match(char[] str, char[] pattern)
         {
